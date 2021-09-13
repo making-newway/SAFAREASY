@@ -1,38 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400&display=swap');
+
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
+.container {
+  background: url('./images/bg-01.jpg') no-repeat center center;
+  max-width: 100%;
+  min-height: calc(100vh - 200px);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-size: cover;
+}
+
+.card {
+  width: 500px;
+  overflow: hidden;
+  padding: 65px 55px 54px;
+  position: relative;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+
+h1, h2 {
+  display: block;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 39px;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 49px;
+}
+
+.form-group {
+  position: relative;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.form-group input {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: black;
+}
+
+.form-group input:focus {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+}
+
+.form-group label {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group input:focus + label,
+.form-group input:valid + label {
+  top: -38px;
+  left: -10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.form-group .line {
+  position: absolute;
+  bottom: 5px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.form-group input:focus ~ .line,
+.form-group input:valid ~ .line {
+  height: 100%;
+}
+
+
+.card .btn {
+  background-image: linear-gradient(to right,#00dbde,#fc00ff,#00dbde);
+  padding: 15px 45px;
+  font-family: Poppins;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 160% auto;
+  outline: none;
+  border: 1px solid #6c757d;
+  color: white;
+  border-radius: 45px;
+ }
+
+.card .btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.footer {
+  height: 200px;
+  padding: 20px 0;
+  background-color: #343a40;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer .col {
+  text-align: left;
+  padding-left: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer .col a, .footer .col p {
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  text-decoration: none;
 }
