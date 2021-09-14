@@ -16,6 +16,7 @@ app.get('/api/prices', (req, res) => {
     // {
     //      "value" : "USD"
     // }
+    // Exchange Key : 8fdb75f8b1e4cf7eec8b
 
     request('https://api.coindesk.com/v1/bpi/currentprice.json', function(err, response, body) {
 
